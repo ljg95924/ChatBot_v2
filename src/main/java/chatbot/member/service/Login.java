@@ -1,6 +1,7 @@
 package chatbot.member.service;
 
 import chatbot.common.InputMessage;
+import chatbot.member.dao.MemberDAO;
 import chatbot.member.dto.MemberDTO;
 
 import java.io.BufferedReader;
@@ -20,29 +21,24 @@ public class Login {
         this.br = br;
         this.pw = pw;
     }
-    public final boolean serviceLogin(String str) throws IOException {
-        if (str.equals("1")) return tryLogin();
-        if (str.equals("2")) return joinMember();
-        return false;
-    }
+
 
     private boolean joinMember() throws IOException {
         String id;
         String password;
         String name;
-        String mobileNumber;
+        String mobile;
 
         id = inputId();
         password = inputPassword();
         name = inputName();
-        mobileNumber = inputPhoneNum();
+        mobile = inputPhoneNum();
 
-        memberList.add(MemberDTO.joinMember(id, password, name, mobileNumber));
-        member = memberList.get(memberList.size() - 1);
+        member = MemberDTO.joinMember(id, password, name, mobile);
         pw.println("회원가입완료");
         pw.flush();
         InputMessage.input(pw);
-        MemberWriteFile.memberAddFile(member);
+        //MemberWriteFile.memberAddFile(member);
         return true;
     }
 
@@ -122,6 +118,7 @@ public class Login {
             pw.flush();
             return false;
         }
+        loadingMemberList();
         for (MemberDTO member : memberList
         ) {
             if (!member.checkDuplication(id)) {
@@ -153,10 +150,12 @@ public class Login {
         return Pattern.matches("^[가-힣]*$", name) || Pattern.matches("^[a-zA-Z]*$", name);
     }
 
-    private Boolean loginMember(String id, String password) {
-        if(id.equals("admin") && password.equals("admin")){
-
+    private Boolean loginMember(String id, String password) throws IOException {
+        if (id.equals("admin") && password.equals("admin")) {
+            AdminService adminService = new AdminService(pw,br);
+            adminService.selectMode();
         }
+        loadingMemberList();
         for (MemberDTO member : memberList
         ) {
             if (member.getId().equals(id)) {
@@ -178,19 +177,26 @@ public class Login {
         return false;
     }
 
-    public final String selectLoginOrJoin(String str) throws IOException {
+    public final MemberDTO selectLoginOrJoin() throws IOException {
         while (true) {
-            if (str.equals("1") || str.equals("2")) return str;
             pw.println("로그인은1번, 회원가입은 2번");
             pw.flush();
             InputMessage.input(pw);
-            str = br.readLine();
+            String str = br.readLine();
+            if (str.equals("1")) {
+                tryLogin();
+                return member;
+            }
+            if (str.equals("2")) {
+                joinMember();
+                return member;
+            }
+            pw.println("다시 입력해주세요.");
         }
     }
 
-    public final void LoadingLoginFile() {
-        MemberReadFile file = new MemberReadFile();
-        file.ReadTextFile();
-        memberList = file.saveData();
+    public final void loadingMemberList() {
+        memberList = MemberDAO.getInstance().getList();
+
     }
 }

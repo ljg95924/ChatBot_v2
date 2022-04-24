@@ -1,26 +1,14 @@
 package chatbot.main.controller;
 
-import chatbot.common.ModuleSingleTonDTO;
-import chatbot.member.dto.MemberDTO;
 
-public class Controller {
-    public static void main(String[] args) {
-        //ModuleSingleTonDTO.get
-        //로그인 기능
-        MemberDTO memberDto = new MemberDTO();
-        //MmeberDAO memberDao = new MemberDAO();
-        //memberDto = memberDao.~~();
+import java.util.Map;
 
+public interface Controller {
 
+    /**
+     * @param model DTO, screenName 등 담을 모델
+     * @return renderScreenName - 클라이언트에서 화면 렌더링 시 필요한 이름
+     */
+    String process(Map<String, Object> model);
 
-
-        //예약기능
-
-
-
-
-
-        //문자기능
-
-    }
 }

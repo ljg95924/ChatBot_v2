@@ -4,27 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b3cef42-0b49-49fd-bbd1-632862e5000e" name="Changes" comment="feat:package 생성">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/common/InputMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/common/ModuleSingleTonDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/server/ChatbotServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/server/ChatbotServerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/dto/MemberDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/reservation/dto/ReservationDTO.java" afterDir="false" />
+    <list default="true" id="6b3cef42-0b49-49fd-bbd1-632862e5000e" name="Changes" comment="Feat: MemberDTO">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/common/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/server/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/controller/MemberFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/controller/MemberListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/controller/MemberSaveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/common/InputMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/common/InputMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/main/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/main/server/ChatbotServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/server/ChatbotServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/main/server/ChatbotServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/main/server/ChatbotServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/member/dao/MemberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/dao/MemberDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/member/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatbot/member/service/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatbot/member/service/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +56,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Clone/ChatBotProject_V2" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,6 +74,28 @@
       <option name="presentableId" value="Default" />
       <updated>1650608397067</updated>
     </task>
+    <task id="LOCAL-00001" summary="Feat: 로그인, 회원가입 기능">
+      <created>1650726356588</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650726356588</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Feat: MemberDAO">
+      <created>1650726375189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650726375189</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Feat: MemberDTO">
+      <created>1650726387748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650726387748</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +111,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="Feat: 로그인, 회원가입 기능" />
+    <MESSAGE value="Feat: MemberDAO" />
+    <MESSAGE value="Feat: MemberDTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: MemberDTO" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package chatbot.member.dto;
 
+import chatbot.member.dao.MemberDAO;
+
 import java.util.Objects;
 
 
@@ -9,22 +11,41 @@ public class MemberDTO {
     private String id;
     private String password;
     private String name;
-    private String mobileNumber;
+    private String mobile;
+    private boolean withdraw = false;
 
-    private MemberDTO(int mno, String id, String password, String name, String mobileNumber) {
+    private MemberDTO(String id, String password, String name, String mobile) {
+        this.id = id;
+        this.password = password;
+        this.name = name;
+        this.mobile = mobile;
+    }
+
+    private MemberDTO(int mno, String id, String password, String name, String mobile) {
         this.mno = mno;
         this.id = id;
         this.password = password;
         this.name = name;
-        this.mobileNumber = mobileNumber;
+        this.mobile = mobile;
     }
 
-    public static MemberDTO joinMember(int mno, String id, String password, String name, String mobileNumber) {
-        return new MemberDTO(mno, id, password, name, mobileNumber);
+    public static MemberDTO joinMember(String id, String password, String name, String mobile) {
+        MemberDAO.getInstance().insert(new MemberDTO(id, password, name, mobile));
+        return MemberDAO.getInstance().getMember(id);
+
+
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
+    public static MemberDTO loadMember(int mno, String id, String password, String name, String mobile) {
+        return new MemberDTO(mno, id, password, name, mobile);
+    }
+
+    public int getMno() {
+        return mno;
+    }
+
+    public String getMobile() {
+        return mobile;
     }
 
     public String getName() {
@@ -37,6 +58,14 @@ public class MemberDTO {
 
     public String getId() {
         return id;
+    }
+
+    public boolean getWithdraw() {
+        return withdraw;
+    }
+
+    public void setWithdraw(boolean withdraw) {
+        this.withdraw = withdraw;
     }
 
     public boolean checkDuplication(String id) {
